@@ -94,3 +94,7 @@ Acesse: `http://localhost:5000`
 - **Frontend:** HTML + JavaScript + CSS
 - **Design:** Google Fonts (Poppins, Inter) + CSS Gradients + Media Queries
 - **API:** REST POST com JSON
+
+## Hospedagem
+
+- **Plataforma escolhida:** Render
