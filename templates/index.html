@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Metadados básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+    
+    <!-- Stylesheet principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho com título principal -->
+        <header>
+            <h1>Calculadora de Notas</h1>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <!-- Contêiner com os três quadros de avaliação -->
+            <div class="quadros-container">
+                <!-- A1: Sempre ativo, primeira avaliação -->
+                <div class="quadro" id="quadroA1">
+                    <div class="quadro-header">
+                        <h3>A1</h3>
+                        <span class="badge-fixo">sempre ativo</span>
+                    </div>
+                    <div class="table-head">
+                        <span>Nota</span>
+                        <span>Peso %</span>
+                        <span>Final</span>
+                        <span></span>
+                    </div>
+                    <div class="notas-list" id="notasA1"></div>
+                    <button class="btn-add" onclick="adicionarNota('A1')">+ Adicionar</button>
+                    <div class="footer-info">
+                        <div class="info-group">
+                            <label>Parcial:</label>
+                            <span id="parcialA1">0.00</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Peso:</label>
+                            <input type="number" id="pesoA1" value="20" min="0" max="100" onchange="atualizarPesoQuadro('A1', this.value)">
+                        </div>
+                        <div class="info-group">
+                            <label>Final:</label>
+                            <span id="finalA1">0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A2: Segunda avaliação (opcional, ativada por toggle) -->
+                <div class="quadro desabilitado" id="quadroA2">
+                    <div class="quadro-header">
+                        <h3>A2</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleA2" onchange="alternarQuadro('A2')">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="table-head">
+                        <span>Nota</span>
+                        <span>Peso %</span>
+                        <span>Final</span>
+                        <span></span>
+                    </div>
+                    <div class="notas-list" id="notasA2"></div>
+                    <button class="btn-add" onclick="adicionarNota('A2')">+ Adicionar</button>
+                    <div class="footer-info">
+                        <div class="info-group">
+                            <label>Parcial:</label>
+                            <span id="parcialA2">0.00</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Peso:</label>
+                            <input type="number" id="pesoA2" value="30" min="0" max="100" disabled onchange="atualizarPesoQuadro('A2', this.value)">
+                        </div>
+                        <div class="info-group">
+                            <label>Final:</label>
+                            <span id="finalA2">0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A3: Terceira avaliação (opcional, só ativa se A2 estiver ativo) -->
+                <div class="quadro desabilitado" id="quadroA3">
+                    <div class="quadro-header">
+                        <h3>A3</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleA3" onchange="alternarQuadro('A3')">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="table-head">
+                        <span>Nota</span>
+                        <span>Peso %</span>
+                        <span>Final</span>
+                        <span></span>
+                    </div>
+                    <div class="notas-list" id="notasA3"></div>
+                    <button class="btn-add" onclick="adicionarNota('A3')">+ Adicionar</button>
+                    <div class="footer-info">
+                        <div class="info-group">
+                            <label>Parcial:</label>
+                            <span id="parcialA3">0.00</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Peso:</label>
+                            <input type="number" id="pesoA3" value="50" min="0" max="100" disabled onchange="atualizarPesoQuadro('A3', this.value)">
+                        </div>
+                        <div class="info-group">
+                            <label>Final:</label>
+                            <span id="finalA3">0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra final com resultado de média e botão para limpar -->
+            <div class="resultado-final">
+                <span>Média Final:</span>
+                <input type="text" id="mediaFinal" readonly>
+                <button class="btn-limpar" onclick="limpar()">Limpar Tudo</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

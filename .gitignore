@@ -1,0 +1,91 @@
+ .# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.env
+.venv/
+ENV/
+env/
+venv.bak/
+venv-*/
+
+# Local virtualenv created by venv in project root
+/venv/
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+.coverage.*
+
+# Flask instance folder
+instance/
+
+# Database
+*.sqlite3
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Python egg
+*.egg-info/
+
+# Pipenv
+Pipfile.lock
+
+# dotenv
+.env
+
+# node modules (if any frontend added later)
+node_modules/
+
+# OS files
+Thumbs.db
+
+# Coverage reports
+coverage.xml
+
+# Secret files
+secrets.json
+
+# Optional: ignore build artifacts
+/dist
+/.eggs
+
+# End of .gitignore
